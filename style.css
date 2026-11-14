@@ -1,0 +1,223 @@
+/* Blahaj News Styles - Themed around the iconic blue shark */
+:root {
+    --blahaj-blue: #4A90A4;
+    --ikea-blue: #0058A3;
+    --light-blue: #A8D5E5;
+    --white: #FFFFFF;
+    --dark: #1A1A2E;
+    --accent: #FF6B6B;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, var(--light-blue) 0%, var(--white) 50%, var(--blahaj-blue) 100%);
+    color: var(--dark);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--ikea-blue);
+    color: var(--white);
+    padding: 1rem 2rem;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--white);
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-style: italic;
+    opacity: 0.9;
+    margin-bottom: 1rem;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.hero {
+    grid-column: 1 / -1;
+    background: var(--white);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.hero-image {
+    width: 40%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.hero-text {
+    padding: 2rem;
+    flex: 1;
+}
+
+.hero-text h2 {
+    color: var(--ikea-blue);
+    margin-bottom: 1rem;
+}
+
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.article-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-left: 5px solid var(--blahaj-blue);
+    transition: transform 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-card h3 {
+    color: var(--ikea-blue);
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--ikea-blue);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.sidebar {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.sidebar h3 {
+    color: var(--ikea-blue);
+    margin-bottom: 1rem;
+    border-bottom: 2px solid var(--blahaj-blue);
+    padding-bottom: 0.5rem;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.about {
+    grid-column: 1 / -1;
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.about-image {
+    width: 200px;
+    float: right;
+    margin: 0 0 1rem 1rem;
+    border-radius: 10px;
+}
+
+footer {
+    background: var(--dark);
+    color: var(--white);
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+    .hero {
+        flex-direction: column;
+    }
+    .hero-image {
+        width: 100%;
+        height: 200px;
+    }
+    .logo-container {
+        flex-direction: column;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+}
